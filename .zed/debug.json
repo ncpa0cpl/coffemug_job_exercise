@@ -1,0 +1,16 @@
+// Project-local debug tasks
+//
+// For more documentation on how to configure debug tasks,
+// see: https://zed.dev/docs/debugger
+[
+  {
+    "adapter": "JavaScript",
+    "label": "Start debug server",
+    "type": "node",
+    "request": "launch",
+    "runtimeExecutable": "npm",
+    "args": ["run", "start"],
+    "console": "integratedTerminal",
+    "skipFiles": ["<node_internals>/**"],
+  },
+]
