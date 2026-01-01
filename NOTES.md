@@ -1,12 +1,13 @@
 # Assumptions & Simplifications
-1. Aside from the objects mentioned in the exercise description that should be persistent (products and orders), there should be other things that need to be persisted in the DB as well: customers, discounts, taxes
-2. The exercise requires support for volume based discounts, date based discounts and some special case price adjustments (location pricing, VAT tax). I will separate these into three different mechanisms: discounts, taxes and location based prices.
+1. It's acceptable for the required Node version to be the latest v25, as I am using some of the newer features of Node like TypeScript support and native .env file loading, this app may not work with older versions of Node.
+2. Aside from the objects mentioned in the exercise description that should be persistent (products and orders), there should be other things that need to be persisted in the DB as well: customers, discounts, taxes
+3. The exercise requires support for volume based discounts, date based discounts and some special case price adjustments (location pricing, VAT tax). I will separate these into three different mechanisms: discounts, taxes and location based prices.
       - discounts will be stored in DB, containing the information on the discount amount (% of the price), and the rules based on which the application will determine if it's applicable or not
       - taxes will also be stored in DB and used to fulfill the requirement of increased prices in Europe due to VAT, taxes will be calculated at the time of placing an order along with discounts
       - location based pricing - each product will have multiple prices instead of just one, each price can be targeting a specific region (Europe, Asia, Africa, North America), these prices would be created at the time when the products are created and stored in the DB alongside products. when order will be placed an appropriate price will be selected based on customer location and any taxes or discounts will be calculated on top of that price.
-3. For volume based pricing it is assumed that the volume of the whole order is what determines if the discount applies or not, not the volume of specific items
-4. POST endpoints will not require any form of authentication. In a real system all endpoint calls that modify the stored data should be authenticated and authorized to have the permission to perform the action, this will be omitted for simplicity.
-5. In different countries taxes might be calculated differently (and discounts as well), (for example VAT in Poland is calculated per every item separately, while the Canadian GST would be calculated from the sum of all item prices that are applicable for this tax, and other countries could have different rules). For simplicity I will always use a calculation method where each product unit has it's taxes and discounts calculated separately.
+4. For volume based pricing it is assumed that the volume of the whole order is what determines if the discount applies or not, not the volume of specific items
+5. POST endpoints will not require any form of authentication. In a real system all endpoint calls that modify the stored data should be authenticated and authorized to have the permission to perform the action, this will be omitted for simplicity.
+6. In different countries taxes might be calculated differently (and discounts as well), (for example VAT in Poland is calculated per every item separately, while the Canadian GST would be calculated from the sum of all item prices that are applicable for this tax, and other countries could have different rules). For simplicity I will always use a calculation method where each product unit has it's taxes and discounts calculated separately.
 
 # Technical Decisions
 
