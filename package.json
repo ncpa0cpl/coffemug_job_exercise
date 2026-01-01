@@ -1,0 +1,33 @@
+{
+  "name": "coffemug_exercise",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "scripts": {
+    "start": "node ./src/start.ts",
+    "fmt": "dprint fmt",
+    "test": "vitest run",
+    "postinstall": "if [ ! -f .env ]; then cp .env.example .env; fi"
+  },
+  "dependencies": {
+    "@brixtol/country-continent": "^1.0.0",
+    "arktype": "^2.1.29",
+    "big.js": "^7.0.1",
+    "dedent": "^1.7.1",
+    "express": "^5.2.1",
+    "libsql": "^0.5.22",
+    "plain-tag": "^0.1.3"
+  },
+  "devDependencies": {
+    "@types/big.js": "^6.2.2",
+    "@types/express": "^5.0.6",
+    "dprint": "^0.50.2",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
+  },
+  "engines": {
+    "node": ">=25"
+  }
+}
