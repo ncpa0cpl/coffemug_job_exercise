@@ -79,6 +79,7 @@ export function startServerForTesting(port: number, opt: ServerOptions = {}) {
 
     proc.on("exit", ecode => {
       if (ecode != 0) {
+        console.error(serverOut);
         rej(new Error("server process exited: " + ecode));
       }
     });
